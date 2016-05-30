@@ -1,5 +1,8 @@
 package com.test.common.cache;
 
+import javax.servlet.ServletContextEvent;
+import javax.servlet.ServletContextListener;
+
 /**
  * 描述 ：
  *
@@ -10,5 +13,12 @@ package com.test.common.cache;
  * @update : 修改人，修改时间，修改内容
  * @see :[相关类/方法]
  */
-public class ContextLoader {
+public class ContextLoader implements ServletContextListener {
+    public void contextInitialized(ServletContextEvent servletContextEvent) {
+        SpringContextUtil.getInstance();
+    }
+
+    public void contextDestroyed(ServletContextEvent servletContextEvent) {
+
+    }
 }

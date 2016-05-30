@@ -1,5 +1,8 @@
 package com.test.common.cache;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 /**
  * 描述 ：
  *
@@ -11,4 +14,29 @@ package com.test.common.cache;
  * @see :[相关类/方法]
  */
 public class SpringContextUtil {
+    private static ApplicationContext context;
+    private static SpringContextUtil springContextUtil;
+    public SpringContextUtil(){
+        context=new ClassPathXmlApplicationContext("classpath*:applicationContext.xml");
+    }
+    public static SpringContextUtil getInstance(){
+        if (springContextUtil==null){
+            springContextUtil=new SpringContextUtil();
+        }
+        return springContextUtil;
+    }
+    private static ApplicationContext getContext(){
+        return context;
+    }
+    /**
+     * 获取bean对象
+     * @param beanId bean的id
+     * @return bean对象
+     */
+    public static Object getBean(String beanId){
+        if (beanId == null) {
+            throw new NullPointerException();
+        }
+        return getContext().getBean(beanId);
+    }
 }
