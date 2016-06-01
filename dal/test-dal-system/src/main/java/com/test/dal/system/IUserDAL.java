@@ -1,3 +1,5 @@
+package com.test.dal.system;
+
 import com.test.common.entity.UserEntity;
 
 import java.util.List;

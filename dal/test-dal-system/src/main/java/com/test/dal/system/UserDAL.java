@@ -1,3 +1,5 @@
+package com.test.dal.system;
+
 import com.test.common.entity.UserEntity;
 import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 
@@ -13,7 +15,7 @@ import java.util.List;
  * @update : 修改人，修改时间，修改内容
  * @see :[相关类/方法]
  */
-public class UserDAL extends HibernateDaoSupport implements IUserDAL{
+public class UserDAL extends HibernateDaoSupport implements IUserDAL {
     public List<UserEntity> getUsers() {
         return this.getHibernateTemplate().loadAll(UserEntity.class);
     }
