@@ -73,11 +73,11 @@
     <!-- 启用事务注解-->
     <tx:annotation-driven transaction-manager="transactionManager" />
     <!-- 测试类注入 -->
-    <bean id="testDao" class="gsunis.encs.dao.system.TestDaoImpl">
+    <bean id="userDAL" class="com.test.dal.system.UserDAL">
         <property name="sessionFactory"> <ref bean="sessionFactory" /></property>
     </bean>
-    <bean id="testService" class="gsunis.encs.service.system.TestServiceImpl">
-        <property name="testDao" ref="testDao"></property>
+    <bean id="userBLL" class="com.test.bll.system.UserBLL">
+        <property name="userDAL" ref="userDAL"></property>
     </bean>
     <!-- 其他类类注入 -->
 </beans>
