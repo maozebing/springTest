@@ -15,5 +15,13 @@
         <module>test-dal-system</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.test</groupId>
+            <artifactId>test-common-entity</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
 
 </project>
