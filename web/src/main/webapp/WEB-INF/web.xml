@@ -54,7 +54,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>Jersey REST Service</servlet-name>
-    <url-pattern>/api/*</url-pattern>
+    <url-pattern>/api/v1.0/*</url-pattern>
   </servlet-mapping>
 
   <!-- Druid内置提供了一个StatViewServlet用于展示Druid的统计信息。

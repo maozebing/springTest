@@ -6,7 +6,7 @@ var Index=function(){
 	
 	var getData=function(){
 		$.ajax({
-			url : "http://localhost:8080/web/api/users",// 类型:String; 说明:发送请求的地址.
+			url : "http://localhost:8080/web/api/v1.0/users",// 类型:String; 说明:发送请求的地址.
 			type : 'get',// 类型:String; 说明:请求方式，默认为GET.
 			success : function(data) {
 				console.log(data);
@@ -27,7 +27,7 @@ var Index=function(){
 		roleEntity.org=org;
 
 		$.ajax({
-			url : "http://localhost:8080/web/api/users",// 类型:String; 说明:发送请求的地址.
+			url : "http://localhost:8080/web/api/v1.0/users",// 类型:String; 说明:发送请求的地址.
 			type : 'post',// 类型:String; 说明:请求方式，默认为GET.
 			data: $.toJSON(roleEntity),
 			contentType: "Application/Json; charset=utf-8", // 发送信息至服务器时内容编码类型
