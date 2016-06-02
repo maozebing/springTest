@@ -2,9 +2,12 @@ package com.test.api.system;
 
 import com.test.bll.system.IUserBLL;
 import com.test.common.cache.SpringContextUtil;
+import com.test.common.entity.RoleEntity;
 import com.test.common.entity.UserEntity;
 
+import javax.swing.plaf.PanelUI;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -23,7 +26,7 @@ import java.util.List;
  */
 @Path("users")
 public class UserAPI {
-    private static final String USERBLL_BEANID="userBll";
+    private static final String USERBLL_BEANID="userBLL";
     private IUserBLL userBLL=(IUserBLL) SpringContextUtil.getBean(USERBLL_BEANID);
 
     @GET
@@ -31,5 +34,11 @@ public class UserAPI {
     public Response getUsers(){
     List<UserEntity> list=userBLL.getUsers();
     return Response.ok(list).build();
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public void postData(RoleEntity entity){
+        System.out.print(11);
     }
 }
