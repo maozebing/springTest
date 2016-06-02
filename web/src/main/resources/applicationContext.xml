@@ -52,7 +52,7 @@
         <!-- 映射文件 -->
         <property name="mappingLocations">
             <list>
-                <!--<value>classpath*:*.hbm.xml</value>-->
+                <value>classpath*:*.hbm.xml</value>
             </list>
         </property>
         <property name="hibernateProperties">
